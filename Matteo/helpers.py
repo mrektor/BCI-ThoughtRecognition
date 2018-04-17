@@ -1,3 +1,5 @@
+import numpy as np
+
 def standardize(x):
     """Standardize the data set x."""
     # Compute the mean for each column
