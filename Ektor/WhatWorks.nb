@@ -1,0 +1,385 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12431,        377]
+NotebookOptionsPosition[     11622,        343]
+NotebookOutlinePosition[     11976,        359]
+CellTagsIndexPosition[     11933,        356]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Things that \[OpenCurlyDoubleQuote]works\[CloseCurlyDoubleQuote]", \
+"Title",
+ CellChangeTimes->{{3.732963842898087*^9, 3.73296384721624*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Dataset Load", "Chapter",
+ CellChangeTimes->{{3.732963852536234*^9, 3.7329638549763803`*^9}}],
+
+Cell["\<\
+Loading the raw signals and transforming them in a suitable wolfram list\
+\>", "Text",
+ CellChangeTimes->{{3.732963868075252*^9, 3.732963899072857*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"oxyYesMatlab", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</Users/ettoremariotti/Desktop/Semmestre/BCI/Project/BCI-\
+ThoughtRecognition/data_students/NIRSoxy_yes_signal.mat\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numSamplesOxyYes", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Dimensions", "[", "oxyYesMatlab", "]"}], "[", 
+    RowBox[{"[", "3", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"oxyYesRaw", " ", "=", "  ", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "[", 
+       RowBox[{"oxyYesMatlab", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "1", ",", "x"}], "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "numSamplesOxyYes"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"oxyNoMatlab", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</Users/ettoremariotti/Desktop/Semmestre/BCI/Project/BCI-\
+ThoughtRecognition/data_students/NIRSoxy_no_signal.mat\>\"", "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numSamplesOxyNo", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Dimensions", "[", "oxyNoMatlab", "]"}], "[", 
+    RowBox[{"[", "3", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"oxyNoRaw", " ", "=", "  ", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "[", 
+       RowBox[{"oxyNoMatlab", "[", 
+        RowBox[{"[", 
+         RowBox[{"1", ",", "1", ",", "x"}], "]"}], "]"}], "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "numSamplesOxyNo"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"oxyDataFullYes", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"oxyYesRaw", "[", 
+       RowBox[{"[", 
+        RowBox[{"x", ",", "All", ",", "All"}], "]"}], "]"}], "\[Rule]", " ", 
+      "\"\<Yes\>\""}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "numSamplesOxyYes"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"oxyDataFullNo", " ", "=", " ", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"oxyNoRaw", "[", 
+        RowBox[{"[", 
+         RowBox[{"x", ",", "All", ",", "All"}], "]"}], "]"}], "\[Rule]", " ", 
+       "\"\<No\>\""}], ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "numSamplesOxyNo"}], "}"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"fullDataYesAndNo", " ", "=", " ", 
+    RowBox[{"Join", "[", 
+     RowBox[{"oxyDataFullNo", ",", "oxyDataFullYes"}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"oxyYesRaw80", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Dimensions", "[", 
+          RowBox[{"oxyYesRaw", "[", 
+           RowBox[{"[", "#", "]"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "\[Equal]", "81"}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"oxyYesRaw80", ",", 
+         RowBox[{"Transpose", "@", 
+          RowBox[{"Drop", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "@", 
+             RowBox[{"oxyYesRaw", "[", 
+              RowBox[{"[", "#", "]"}], "]"}]}], ",", 
+            RowBox[{"-", "1"}]}], "]"}]}]}], "]"}], ",", " ", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"oxyYesRaw80", ",", 
+         RowBox[{"oxyYesRaw", "[", 
+          RowBox[{"[", "#", "]"}], "]"}]}], "]"}]}], "]"}], "&"}], "/@", 
+    RowBox[{"Range", "[", "numSamplesOxyYes", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"oxyNoRaw80", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Dimensions", "[", 
+         RowBox[{"oxyNoRaw", "[", 
+          RowBox[{"[", "#", "]"}], "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], "\[Equal]", "81"}], ",", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"oxyNoRaw80", ",", 
+        RowBox[{"Transpose", "@", 
+         RowBox[{"Drop", "[", 
+          RowBox[{
+           RowBox[{"Transpose", "@", 
+            RowBox[{"oxyNoRaw", "[", 
+             RowBox[{"[", "#", "]"}], "]"}]}], ",", 
+           RowBox[{"-", "1"}]}], "]"}]}]}], "]"}], ",", " ", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"oxyNoRaw80", ",", 
+        RowBox[{"oxyNoRaw", "[", 
+         RowBox[{"[", "#", "]"}], "]"}]}], "]"}]}], "]"}], "&"}], "/@", 
+   RowBox[{"Range", "[", "numSamplesOxyNo", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7329639126769342`*^9, 3.732963976286038*^9}, {
+  3.732964052449965*^9, 3.732964073231682*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Data Preprocessing", "Chapter",
+ CellChangeTimes->{{3.7329641071552687`*^9, 3.7329641105131073`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Dimensionality Reduction on Channels", "Subsubsection",
+ CellChangeTimes->{{3.7329644297172117`*^9, 3.732964442531405*^9}}],
+
+Cell["Dimensionality reduction of the channels performed via PCA", "Text",
+ CellChangeTimes->{{3.7329641252680283`*^9, 3.732964154154067*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"reducedOxyNo80", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{"DimensionReduce", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "@", "#"}], ",", "2", ",", 
+        RowBox[{
+        "Method", "\[Rule]", "\"\<PrincipalComponentsAnalysis\>\""}]}], "]"}],
+       "]"}], "&"}], "/@", "oxyNoRaw80"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"reducedOxyYes80", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{"DimensionReduce", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "@", "#"}], ",", "2", ",", 
+        RowBox[{
+        "Method", "\[Rule]", "\"\<PrincipalComponentsAnalysis\>\""}]}], "]"}],
+       "]"}], "&"}], "/@", "oxyYesRaw80"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.732964165533478*^9, 3.732964165875785*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Standardized Machine Learning", "Chapter",
+ CellChangeTimes->{{3.7329642661845827`*^9, 3.732964275935154*^9}}],
+
+Cell[TextData[{
+ "Ad-",
+ StyleBox["hoc",
+  IgnoreSpellCheck->True],
+ " built models for automated classification"
+}], "Text",
+ CellChangeTimes->{{3.732964281279008*^9, 3.732964293894945*^9}, {
+  3.7329644521016073`*^9, 3.732964453923853*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"unifyData", "[", 
+     RowBox[{"yes_List", ",", "no_List"}], "]"}], ":=", " ", 
+    RowBox[{"Join", "[", 
+     RowBox[{
+      RowBox[{"Thread", "[", 
+       RowBox[{
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"yes", "[", 
+           RowBox[{"[", 
+            RowBox[{"x", ",", "All", ",", "All"}], "]"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", 
+            RowBox[{"Length", "[", "yes", "]"}]}], "}"}]}], "]"}], "\[Rule]", 
+        " ", "\"\<Yes\>\""}], "]"}], ",", 
+      RowBox[{"Thread", "[", 
+       RowBox[{
+        RowBox[{"Table", "[", 
+         RowBox[{
+          RowBox[{"no", "[", 
+           RowBox[{"[", 
+            RowBox[{"x", ",", "All", ",", "All"}], "]"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"x", ",", 
+            RowBox[{"Length", "[", "no", "]"}]}], "}"}]}], "]"}], "\[Rule]", 
+        "\"\<No\>\""}], "]"}]}], "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"partitionTrainTest", "[", 
+     RowBox[{"data_List", ",", "frac_Real"}], "]"}], ":=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"trainDataYesAndNo", " ", "=", " ", 
+       RowBox[{"RandomSample", "[", 
+        RowBox[{"data", ",", 
+         RowBox[{"Round", "@", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"Length", "[", "data", "]"}], "*", "frac"}], ")"}]}]}], 
+        "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"testDataYesAndNo", " ", "=", " ", 
+       RowBox[{"Complement", "[", 
+        RowBox[{"data", ",", "trainDataYesAndNo"}], "]"}]}]}], "}"}]}], ";"}],
+   "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"rotateLabel", "[", "label_", "]"}], ":=", 
+   RowBox[{"Style", "[", 
+    RowBox[{
+     RowBox[{"Rotate", "[", 
+      RowBox[{"label", ",", 
+       RowBox[{"Pi", "/", "4"}]}], "]"}], ",", "30", ",", "Bold", ",", 
+     RowBox[{"Opacity", "[", "0.2", "]"}], ",", 
+     RowBox[{"FontFamily", "\[Rule]", "\"\<Helvetica\>\""}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"showPerformance", "[", 
+    RowBox[{"dataTrain_List", ",", "dataTest_List"}], "]"}], ":=", 
+   "\[IndentingNewLine]", 
+   RowBox[{"BarChart", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"Query", "[", 
+       RowBox[{"All", ",", 
+        RowBox[{
+         RowBox[{"ClassifierMeasurements", "[", 
+          RowBox[{"#", ",", "dataTest", ",", "\"\<Accuracy\>\""}], "]"}], 
+         "&"}]}], "]"}], "@", 
+      RowBox[{"(", 
+       RowBox[{"Association", "@@", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"#", "\[Rule]", "  ", 
+            RowBox[{"Classify", "[", 
+             RowBox[{"dataTrain", ",", 
+              RowBox[{"Method", "\[Rule]", 
+               RowBox[{"{", "#", "}"}]}]}], "]"}]}], "&"}], "/@", 
+          RowBox[{"{", 
+           RowBox[{
+           "\"\<LogisticRegression\>\"", ",", "\"\<Markov\>\"", ",", 
+            "\"\<NaiveBayes\>\"", ",", "\"\<NearestNeighbors\>\"", ",", 
+            "\"\<NeuralNetwork\>\"", ",", "\"\<RandomForest\>\"", ",", 
+            "\"\<SupportVectorMachine\>\""}], "}"}]}], ")"}]}], ")"}]}], ",", 
+     
+     RowBox[{"ChartLabels", "\[Rule]", 
+      RowBox[{"Placed", "[", 
+       RowBox[{"Automatic", ",", "Below", ",", 
+        RowBox[{
+         RowBox[{"Rotate", "[", 
+          RowBox[{"#", ",", 
+           RowBox[{"Pi", "/", "2.4"}]}], "]"}], "&"}]}], "]"}]}], ",", 
+     RowBox[{"ChartStyle", "\[Rule]", "\"\<DarkRainbow\>\""}], ",", 
+     RowBox[{"LabelingFunction", "\[Rule]", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"Placed", "[", 
+         RowBox[{"#", ",", "Above"}], "]"}], "&"}], ")"}]}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.732964303186974*^9, 3.732964320915852*^9}, {
+  3.732964361839675*^9, 3.732964364654125*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{808, 756},
+WindowMargins->{{27, Automatic}, {Automatic, 32}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 148, 2, 92, "Title"],
+Cell[CellGroupData[{
+Cell[753, 28, 99, 1, 65, "Chapter"],
+Cell[855, 31, 162, 3, 30, "Text"],
+Cell[1020, 36, 4939, 139, 621, "Input"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5996, 180, 107, 1, 65, "Chapter"],
+Cell[CellGroupData[{
+Cell[6128, 185, 129, 1, 35, "Subsubsection"],
+Cell[6260, 188, 142, 1, 30, "Text"],
+Cell[6405, 191, 859, 23, 138, "Input"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7313, 220, 116, 1, 65, "Chapter"],
+Cell[7432, 223, 242, 7, 30, "Text"],
+Cell[7677, 232, 3917, 107, 369, "Input"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
