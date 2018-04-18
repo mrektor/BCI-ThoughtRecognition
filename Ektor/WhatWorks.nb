@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12431,        377]
-NotebookOptionsPosition[     11622,        343]
-NotebookOutlinePosition[     11976,        359]
-CellTagsIndexPosition[     11933,        356]
+NotebookDataLength[     12433,        377]
+NotebookOptionsPosition[     11624,        343]
+NotebookOutlinePosition[     11978,        359]
+CellTagsIndexPosition[     11935,        356]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -58,7 +58,7 @@ ThoughtRecognition/data_students/NIRSoxy_yes_signal.mat\>\"", "]"}]}],
          RowBox[{"1", ",", "1", ",", "x"}], "]"}], "]"}], "]"}], ",", 
       RowBox[{"{", 
        RowBox[{"x", ",", "numSamplesOxyYes"}], "}"}]}], "]"}]}], ";"}], 
-  "\[IndentingNewLine]", "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{"oxyNoMatlab", " ", "=", " ", 
    RowBox[{
@@ -173,7 +173,7 @@ ThoughtRecognition/data_students/NIRSoxy_no_signal.mat\>\"", "]"}]}],
          RowBox[{"[", "#", "]"}], "]"}]}], "]"}]}], "]"}], "&"}], "/@", 
    RowBox[{"Range", "[", "numSamplesOxyNo", "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.7329639126769342`*^9, 3.732963976286038*^9}, {
-  3.732964052449965*^9, 3.732964073231682*^9}}]
+   3.732964052449965*^9, 3.732964073231682*^9}, 3.7330521345745497`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -363,20 +363,20 @@ Cell[580, 22, 148, 2, 92, "Title"],
 Cell[CellGroupData[{
 Cell[753, 28, 99, 1, 65, "Chapter"],
 Cell[855, 31, 162, 3, 30, "Text"],
-Cell[1020, 36, 4939, 139, 621, "Input"]
+Cell[1020, 36, 4941, 139, 600, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[5996, 180, 107, 1, 65, "Chapter"],
+Cell[5998, 180, 107, 1, 65, "Chapter"],
 Cell[CellGroupData[{
-Cell[6128, 185, 129, 1, 35, "Subsubsection"],
-Cell[6260, 188, 142, 1, 30, "Text"],
-Cell[6405, 191, 859, 23, 138, "Input"]
+Cell[6130, 185, 129, 1, 35, "Subsubsection"],
+Cell[6262, 188, 142, 1, 30, "Text"],
+Cell[6407, 191, 859, 23, 138, "Input"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7313, 220, 116, 1, 65, "Chapter"],
-Cell[7432, 223, 242, 7, 30, "Text"],
-Cell[7677, 232, 3917, 107, 369, "Input"]
+Cell[7315, 220, 116, 1, 65, "Chapter"],
+Cell[7434, 223, 242, 7, 30, "Text"],
+Cell[7679, 232, 3917, 107, 369, "Input"]
 }, Open  ]]
 }, Open  ]]
 }
