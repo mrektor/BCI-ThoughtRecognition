@@ -1,0 +1,40 @@
+
+
+24/04 
+
+
+CONSIDERAZIONI:
+
+EEG:   
+
+1) Banda interesseante 4-50 Hz
+
+2) Filtri applicati:
+
+- passa basso fino ai 4 Hz
+- pasta alto ( frequenza =? >>> problema con la distorsione) 
+
+
+
+NIRS: 
+
+1) Quali features aggiungere?
+
+	- Distanza dall archetype. *** 
+
+2) Come creare l archetype? 
+	- cross entropy: clustering Sulla forma
+
+
+
+	OXY: YEs: 0.7 drift verso l’alto  
+   	NO:  0.54 drift verso il basso 
+
+	DEOXY: molto piatti .. per il momento non li utilizziamo
+
+
+
+
+
+
+
