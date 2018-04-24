@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     12433,        377]
-NotebookOptionsPosition[     11624,        343]
-NotebookOutlinePosition[     11978,        359]
-CellTagsIndexPosition[     11935,        356]
+NotebookDataLength[     15580,        464]
+NotebookOptionsPosition[     14650,        426]
+NotebookOutlinePosition[     15006,        442]
+CellTagsIndexPosition[     14963,        439]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -337,12 +337,95 @@ Cell[BoxData[{
          RowBox[{"#", ",", "Above"}], "]"}], "&"}], ")"}]}]}], "]"}]}], 
   ";"}]}], "Input",
  CellChangeTimes->{{3.732964303186974*^9, 3.732964320915852*^9}, {
-  3.732964361839675*^9, 3.732964364654125*^9}}]
+  3.732964361839675*^9, 3.732964364654125*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Automatic ML with Leave-one-out performance assessment", "Subsection",
+ CellChangeTimes->{{3.733505438220957*^9, 3.7335054566748133`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"leaveOneOutAccuracy", "[", "dataSet_", "]"}], " ", ":=", "  ", 
+  RowBox[{"Mean", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ClassifierMeasurements", "[", 
+      RowBox[{
+       RowBox[{"Classify", "[", 
+        RowBox[{"Drop", "[", 
+         RowBox[{"dataSet", ",", 
+          RowBox[{"{", "#", "}"}]}], "]"}], "]"}], ",", 
+       RowBox[{"Take", "[", 
+        RowBox[{"dataSet", ",", 
+         RowBox[{"{", "#", "}"}]}], "]"}], ",", "\"\<Accuracy\>\""}], "]"}], 
+     "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"Length", "[", "dataSet", "]"}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"leaveOneOutAccuracy", "[", 
+   RowBox[{"dataSet_", ",", "str_"}], "]"}], " ", ":=", "  ", 
+  RowBox[{"Mean", "[", "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ClassifierMeasurements", "[", 
+      RowBox[{
+       RowBox[{"Classify", "[", 
+        RowBox[{
+         RowBox[{"Drop", "[", 
+          RowBox[{"dataSet", ",", 
+           RowBox[{"{", "#", "}"}]}], "]"}], ",", 
+         RowBox[{"Method", "\[Rule]", "str"}]}], "]"}], ",", 
+       RowBox[{"Take", "[", 
+        RowBox[{"dataSet", ",", 
+         RowBox[{"{", "#", "}"}]}], "]"}], ",", "\"\<Accuracy\>\""}], "]"}], 
+     "&"}], "/@", 
+    RowBox[{"Range", "[", 
+     RowBox[{"Length", "[", "dataSet", "]"}], "]"}]}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"autoML", "[", "data_", "]"}], ":=", "  ", 
+  RowBox[{"BarChart", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"leaveOneOutAccuracy", "[", 
+       RowBox[{"data", ",", "#"}], "]"}], "&"}], "/@", " ", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<LogisticRegression\>\"", ",", "\"\<Markov\>\"", ",", 
+       "\"\<NaiveBayes\>\"", ",", "\"\<NearestNeighbors\>\"", ",", 
+       "\"\<NeuralNetwork\>\"", ",", "\"\<RandomForest\>\"", ",", 
+       "\"\<SupportVectorMachine\>\""}], "}"}]}], ",", "\[IndentingNewLine]", 
+    
+    RowBox[{"ChartLabels", "\[Rule]", 
+     RowBox[{"Placed", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<LogisticRegression\>\"", ",", "\"\<Markov\>\"", ",", 
+         "\"\<NaiveBayes\>\"", ",", "\"\<NearestNeighbors\>\"", ",", 
+         "\"\<NeuralNetwork\>\"", ",", "\"\<RandomForest\>\"", ",", 
+         "\"\<SupportVectorMachine\>\""}], "}"}], ",", "Below", ",", 
+       RowBox[{
+        RowBox[{"Rotate", "[", 
+         RowBox[{"#", ",", 
+          RowBox[{"Pi", "/", "2.4"}]}], "]"}], "&"}]}], "]"}]}], ",", 
+    RowBox[{"ChartStyle", "\[Rule]", "\"\<DarkRainbow\>\""}], ",", 
+    RowBox[{"LabelingFunction", "\[Rule]", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"Placed", "[", 
+        RowBox[{"#", ",", "Above"}], "]"}], "&"}], ")"}]}]}], 
+   "]"}]}]}], "Input",
+ CellChangeTimes->{{3.733505466070899*^9, 3.7335054665183764`*^9}}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{808, 756},
-WindowMargins->{{27, Automatic}, {Automatic, 32}},
+WindowMargins->{{Automatic, 229}, {-26, Automatic}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -376,7 +459,11 @@ Cell[6407, 191, 859, 23, 138, "Input"]
 Cell[CellGroupData[{
 Cell[7315, 220, 116, 1, 65, "Chapter"],
 Cell[7434, 223, 242, 7, 30, "Text"],
-Cell[7679, 232, 3917, 107, 369, "Input"]
+Cell[7679, 232, 3917, 107, 369, "Input"],
+Cell[CellGroupData[{
+Cell[11621, 343, 144, 1, 44, "Subsection"],
+Cell[11768, 346, 2842, 75, 361, "Input"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]]
 }
