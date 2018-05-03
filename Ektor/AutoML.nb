@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     84064,       2134]
-NotebookOptionsPosition[     82469,       2079]
-NotebookOutlinePosition[     82822,       2095]
-CellTagsIndexPosition[     82779,       2092]
+NotebookDataLength[     84033,       2133]
+NotebookOptionsPosition[     82439,       2078]
+NotebookOutlinePosition[     82791,       2094]
+CellTagsIndexPosition[     82748,       2091]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1946,24 +1946,23 @@ Cell[BoxData[
      ImageScaled[{0.5, 1}]], 
     InsetBox["0.5666666666666667`", Offset[{0, 4}, {7., 0.5666666666666667}], 
      ImageScaled[{0.5, 0}]]}, 
-   StyleBox[
-    StyleBox[{
-      {Thickness[Tiny], 
-       LineBox[{{0.40424519670631287`, 0.}, {7.598520768526989, 0.}}], 
+   StyleBox[{
+     {Thickness[Tiny], 
+      LineBox[{{0.40424519670631287`, 0.}, {7.598520768526989, 0.}}], 
+      StyleBox[{}, "GraphicsLabel",
+       StripOnInput->False]}, 
+     StyleBox[{
+       {Thickness[Tiny], 
+        LineBox[{{0.5425434583714547, 0.}, 
+          Offset[{-1.102182119232618*^-15, -6.}, {0.5425434583714547, 0.}]}], 
+        LineBox[{{7.457456541628544, 0.}, 
+          Offset[{-1.102182119232618*^-15, -6.}, {7.457456541628544, 
+           0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}}}, 
        StyleBox[{}, "GraphicsLabel",
-        StripOnInput->False]}, 
-      StyleBox[{
-        {Thickness[Tiny], 
-         LineBox[{{0.5425434583714547, 0.}, 
-           Offset[{-1.102182119232618*^-15, -6.}, {0.5425434583714547, 0.}]}],
-          LineBox[{{7.457456541628544, 0.}, 
-           Offset[{-1.102182119232618*^-15, -6.}, {7.457456541628544, 
-            0.}]}], {{}, {}, {}, {}, {}, {}, {}, {}, {}}}, 
-        StyleBox[{}, "GraphicsLabel",
-         StripOnInput->False]}, "GraphicsTicks",
-       StripOnInput->False]},
-     Antialiasing->False], "GraphicsAxes",
-    StripOnInput->False]},
+        StripOnInput->False]}, "GraphicsTicks",
+      StripOnInput->False]}, "GraphicsAxes",
+    StripOnInput->False,
+    Antialiasing->False]},
   AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
   Axes->{False, True},
   AxesLabel->{None, None},
@@ -2078,7 +2077,7 @@ Cell[BoxData[
 }, Open  ]]
 },
 WindowSize->{808, 791},
-WindowMargins->{{Automatic, 96}, {Automatic, 0}},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -2133,7 +2132,7 @@ Cell[68469, 1727, 1514, 40, 138, "Input"],
 Cell[69986, 1769, 1542, 38, 201, "Input"],
 Cell[CellGroupData[{
 Cell[71553, 1811, 142, 2, 32, "Input"],
-Cell[71698, 1815, 10743, 260, 376, "Output"]
+Cell[71698, 1815, 10713, 259, 342, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
