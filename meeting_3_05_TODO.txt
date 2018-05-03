@@ -1,0 +1,24 @@
+IN DOING:
+
+- approccio a clustering Sul NiRS >>> problema signal discordant
+- esplorazione di EEG : features non cost distinguibili. 
+
+
+
+
+IDEE per il futuro:
+
+EEG:
+	- features extraction>> quanto può esser effettivo 
+	- AutoENCODER per EEG;
+	- HDD per EEG 
+
+NIRS:
+- Vedere il classificatore SVM con MEanSHift
+
+
+
+
+uniformare il codice
+ 
+

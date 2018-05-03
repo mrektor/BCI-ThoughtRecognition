@@ -1,19 +1,20 @@
 
-fc=1/0.128040973111396;
+fc= 500; 
+% 1/0.128040973111396; % NIRS
 
-NIRSdxy_no_signal=load('NIRSdxy_no_signal.mat');
-NIRSdxy_yes_signal=load('NIRSdxy_yes_signal.mat');
+% NIRSdxy_no_signal=load('NIRSdxy_no_signal.mat');
+% NIRSdxy_yes_signal=load('NIRSdxy_yes_signal.mat');
+% 
+% NIRSoxy_no_signal=load('NIRSoxy_no_signal.mat');
+% NIRSoxy_yes_signal=load('NIRSoxy_yes_signal.mat');
 
-NIRSoxy_no_signal=load('NIRSoxy_no_signal.mat');
-NIRSoxy_yes_signal=load('NIRSoxy_yes_signal.mat');
+EEG_no_signal=load('Good_signals/EEGno_signal.mat');
+EEG_yes_signal=load('Good_signals/EEGyes_signal.mat');
 
-EEG_no_signal=load('EEGno_signal.mat');
-EEG_yes_signal=load('EEGyes_signal.mat');
-
-pick_cell=peak_detect(NIRSdxy_no_signal.no_signal,fc,'pick_NIRSdxy_no_signal');
-pick_cell=peak_detect(NIRSdxy_yes_signal.yes_signal,fc,'pick_NIRSdxy_yes_signal');
-pick_cell=peak_detect(NIRSoxy_no_signal.no_signal,fc,'pick_NIRSoxy_no_signal');
-pick_cell=peak_detect(NIRSoxy_yes_signal.yes_signal,fc,'pick_NIRSoxy_yes_signal');
+% pick_cell=peak_detect(NIRSdxy_no_signal.no_signal,fc,'pick_NIRSdxy_no_signal');
+% pick_cell=peak_detect(NIRSdxy_yes_signal.yes_signal,fc,'pick_NIRSdxy_yes_signal');
+% pick_cell=peak_detect(NIRSoxy_no_signal.no_signal,fc,'pick_NIRSoxy_no_signal');
+% pick_cell=peak_detect(NIRSoxy_yes_signal.yes_signal,fc,'pick_NIRSoxy_yes_signal');
 pick_cell=peak_detect(EEG_no_signal.no_signal,fc,'pick_EEG_no_signal');
 pick_cell=peak_detect(EEG_yes_signal.yes_signal,fc,'pick_EEG_yes_signal');
 
@@ -57,13 +58,13 @@ end
 fft_pick_frequencies=f(indexes);
 fft_pick_coefficents=spectrum(indexes);
 
-h = figure;
-set(h, 'Visible', 'off');
-plot(f,spectrum)
-hold on
-plot(fft_pick_frequencies, fft_pick_coefficents, '*')        
+% h = figure;
+% set(h, 'Visible', 'off');
+% plot(f,spectrum)
+% hold on
+% plot(fft_pick_frequencies, fft_pick_coefficents, '*')        
 
-saveas(h,string);
+%saveas(h,string);
 
 
 if(length(fft_pick_frequencies)<number_of_pick)
