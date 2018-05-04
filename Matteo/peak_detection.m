@@ -1,22 +1,22 @@
 
-fc= 500; 
-% 1/0.128040973111396; % NIRS
+ 
+fc=1/0.128040973111396; % NIRS
 
 % NIRSdxy_no_signal=load('NIRSdxy_no_signal.mat');
 % NIRSdxy_yes_signal=load('NIRSdxy_yes_signal.mat');
 % 
-% NIRSoxy_no_signal=load('NIRSoxy_no_signal.mat');
-% NIRSoxy_yes_signal=load('NIRSoxy_yes_signal.mat');
+NIRSoxy_no_signal=load('./segnali_belli/NIRSoxy_noFasato.mat');
+NIRSoxy_yes_signal=load('./segnali_belli/NIRSoxy_yesFasato.mat');
 
-EEG_no_signal=load('Good_signals/EEGno_signal.mat');
-EEG_yes_signal=load('Good_signals/EEGyes_signal.mat');
+%EEG_no_signal=load('Good_signals/EEGno_signal.mat');
+%EEG_yes_signal=load('Good_signals/EEGyes_signal.mat');
 
 % pick_cell=peak_detect(NIRSdxy_no_signal.no_signal,fc,'pick_NIRSdxy_no_signal');
 % pick_cell=peak_detect(NIRSdxy_yes_signal.yes_signal,fc,'pick_NIRSdxy_yes_signal');
-% pick_cell=peak_detect(NIRSoxy_no_signal.no_signal,fc,'pick_NIRSoxy_no_signal');
-% pick_cell=peak_detect(NIRSoxy_yes_signal.yes_signal,fc,'pick_NIRSoxy_yes_signal');
-pick_cell=peak_detect(EEG_no_signal.no_signal,fc,'pick_EEG_no_signal');
-pick_cell=peak_detect(EEG_yes_signal.yes_signal,fc,'pick_EEG_yes_signal');
+pick_cell=peak_detect(NIRSoxy_no_signal.nofasato,fc,'peak_NIRSoxy_no_signal');
+pick_cell=peak_detect(NIRSoxy_yes_signal.yesfasato,fc,'peak_NIRSoxy_yes_signal');
+%pick_cell=peak_detect(EEG_no_signal.no_signal,fc,'pick_EEG_no_signal');
+%pick_cell=peak_detect(EEG_yes_signal.yes_signal,fc,'pick_EEG_yes_signal');
 
 
 function [f_cell,coeff_cell]=peak_detect(signal,fc,name)
@@ -42,7 +42,7 @@ end
 
 function [f_pick,coeff_pick]=find_peak(signal,fc,number_of_pick,string)
 
-f=linspace(0, fc, floor(length(signal)/2));
+f=linspace(0, fc/2, floor(length(signal)/2));
 spectrum= abs(fft(signal.^2));
 spectrum=spectrum(1:floor(length(spectrum)/2));
 [pks,locs]= findpeaks(spectrum);
@@ -57,14 +57,14 @@ end
 
 fft_pick_frequencies=f(indexes);
 fft_pick_coefficents=spectrum(indexes);
-
+% 
 % h = figure;
 % set(h, 'Visible', 'off');
 % plot(f,spectrum)
 % hold on
 % plot(fft_pick_frequencies, fft_pick_coefficents, '*')        
-
-%saveas(h,string);
+% 
+% saveas(h,string);
 
 
 if(length(fft_pick_frequencies)<number_of_pick)
