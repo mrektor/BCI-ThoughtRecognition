@@ -77,8 +77,6 @@ def cross_validation_one_fold_logistic_regularized(y_cross_val_train, y_cross_va
         # Add powers of the chosen columns
         len_data = tx_cross_val_train.shape[1]
         tx_cross_val_train = add_powers(tx_cross_val_train,deg )
-       
-        
         tx_cross_val_test = add_powers(tx_cross_val_test,deg)
   
         
@@ -87,7 +85,7 @@ def cross_validation_one_fold_logistic_regularized(y_cross_val_train, y_cross_va
                 
                 print('>> Lambda', single_lambda, '<<')
                 # Compute the best weights on the training set
-                logreg = linear_model.LogisticRegression(C=1/single_lambda, class_weight="balanced",max_iter=max_iters)
+                logreg = linear_model.LogisticRegression(penalty='l1',C=1/single_lambda, class_weight="balanced",max_iter=max_iters)
                 logreg.fit(tx_cross_val_train,y_cross_val_train )
 
                 # Compute the predictions

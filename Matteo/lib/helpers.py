@@ -20,13 +20,16 @@ def standardize(x):
 
 def build_poly(x, degree):
     """ Returns the polynomial basis functions for input data x, for j=2 up to j=degree."""
-    new_cols=np.array([x**p for p in range(2,degree+1)]).T;
+    new_cols=np.array([x**p for p in range(1,degree+1)]).T;
     return new_cols
 
 def add_powers(tx, degree):
-    for col in range(0,tx.shape[1]): 
-            tx = np.concatenate((tx, build_poly(tx[:,col], degree)), axis=1)
-    return tx
+    if(degree==1):
+        return tx
+    else:
+        for col in range(0,tx.shape[1]): 
+                tx = np.concatenate((tx, build_poly(tx[:,col], degree)), axis=1)
+        return tx
 
 
 
