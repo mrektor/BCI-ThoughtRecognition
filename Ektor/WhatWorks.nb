@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     18071,        525]
-NotebookOptionsPosition[     17141,        487]
-NotebookOutlinePosition[     17496,        503]
-CellTagsIndexPosition[     17453,        500]
+NotebookDataLength[     20324,        581]
+NotebookOptionsPosition[     19279,        539]
+NotebookOutlinePosition[     19635,        555]
+CellTagsIndexPosition[     19592,        552]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -212,7 +212,59 @@ Cell[BoxData[{
         RowBox[{
         "Method", "\[Rule]", "\"\<PrincipalComponentsAnalysis\>\""}]}], "]"}],
        "]"}], "&"}], "/@", "oxyYesRaw80"}]}], ";"}]}], "Input",
- CellChangeTimes->{{3.732964165533478*^9, 3.732964165875785*^9}}]
+ CellChangeTimes->{{3.732964165533478*^9, 3.732964165875785*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"ListLinePlot", "@", 
+    RowBox[{"reducedOxyYes80", "[", 
+     RowBox[{"[", 
+      RowBox[{"Floor", "@", "i"}], "]"}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"i", ",", "1", ",", "30"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.734354835441021*^9, 3.734354976833805*^9}, {
+  3.7343551367685127`*^9, 3.734355156990316*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`i$$ = 1., Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`i$$], 1, 30}}, Typeset`size$$ = {360., {107., 112.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`i$40401$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`i$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`i$$, $CellContext`i$40401$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ListLinePlot[
+        Part[$CellContext`reducedOxyYes80, 
+         Floor[$CellContext`i$$]]], 
+      "Specifications" :> {{$CellContext`i$$, 1, 30}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {152., 158.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.7343548516093407`*^9, 3.7343549770151453`*^9}, {
+  3.734355152781315*^9, 3.734355157504209*^9}}]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 
@@ -486,7 +538,7 @@ Cell[BoxData[{
 }, Open  ]]
 },
 WindowSize->{808, 756},
-WindowMargins->{{Automatic, -95}, {Automatic, 14}},
+WindowMargins->{{Automatic, -115}, {14, Automatic}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -514,16 +566,20 @@ Cell[5998, 180, 107, 1, 65, "Chapter"],
 Cell[CellGroupData[{
 Cell[6130, 185, 129, 1, 35, "Subsubsection"],
 Cell[6262, 188, 142, 1, 30, "Text"],
-Cell[6407, 191, 859, 23, 138, "Input"]
+Cell[6407, 191, 859, 23, 138, "Input"],
+Cell[CellGroupData[{
+Cell[7291, 218, 399, 10, 32, "Input"],
+Cell[7693, 230, 1699, 35, 327, "Output"]
+}, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7315, 220, 116, 1, 65, "Chapter"],
-Cell[7434, 223, 242, 7, 30, "Text"],
-Cell[7679, 232, 3917, 107, 369, "Input"],
+Cell[9453, 272, 116, 1, 65, "Chapter"],
+Cell[9572, 275, 242, 7, 30, "Text"],
+Cell[9817, 284, 3917, 107, 369, "Input"],
 Cell[CellGroupData[{
-Cell[11621, 343, 144, 1, 44, "Subsection"],
-Cell[11768, 346, 5333, 136, 655, "Input"]
+Cell[13759, 395, 144, 1, 44, "Subsection"],
+Cell[13906, 398, 5333, 136, 621, "Input"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

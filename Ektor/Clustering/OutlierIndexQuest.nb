@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    101948,       1968]
-NotebookOptionsPosition[    101016,       1930]
-NotebookOutlinePosition[    101370,       1946]
-CellTagsIndexPosition[    101327,       1943]
+NotebookDataLength[    116323,       2350]
+NotebookOptionsPosition[    114630,       2288]
+NotebookOutlinePosition[    114986,       2304]
+CellTagsIndexPosition[    114943,       2301]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -614,6 +614,7 @@ iA==
     GridLinesStyle->Directive[
       GrayLevel[0.5, 0.4]],
     ImagePadding->All,
+    ImageSize->{207.15625, Automatic},
     Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
            Part[#, 1]], 
@@ -1535,6 +1536,7 @@ vBWPvE/do3+E03gr1kprB/pbyA4rNIeb2fZoMpMB54vwB1pvqOM/skNt1A==
     GridLinesStyle->Directive[
       GrayLevel[0.5, 0.4]],
     ImagePadding->All,
+    ImageSize->{328.83203125, Automatic},
     Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
            Part[#, 1]], 
@@ -1704,6 +1706,7 @@ Dhv7t/AumGk9TjpMae/2LosR4i/aOGRz
     GridLinesStyle->Directive[
       GrayLevel[0.5, 0.4]],
     ImagePadding->All,
+    ImageSize->{306.08203125, Automatic},
     Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
            Part[#, 1]], 
@@ -1907,6 +1910,7 @@ N96Mc9G8zdB27NmgOz/N2WlGmXV18rUc/vu8B8bgEoT9Meb4F95ka28=
     GridLinesStyle->Directive[
       GrayLevel[0.5, 0.4]],
     ImagePadding->All,
+    ImageSize->{299.9765625, Automatic},
     Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
           (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
            Part[#, 1]], 
@@ -1925,11 +1929,365 @@ N96Mc9G8zdB27NmgOz/N2WlGmXV18rUc/vu8B8bgEoT9Meb4F95ka28=
        Scaled[0.05]}},
     Ticks->{Automatic, Automatic}]}], "}"}]], "Output",
  CellChangeTimes->{3.7341269749079447`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListLinePlot", "[", 
+  RowBox[{"reducedPhasedOxyYes80", "[", 
+   RowBox[{"[", 
+    RowBox[{"18", ",", "All"}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.734368518753787*^9, 3.734368548074*^9}, {
+  3.73436909517834*^9, 3.734369120270054*^9}, {3.734369194973528*^9, 
+  3.7343692366338053`*^9}, {3.734369380736104*^9, 3.734369388969262*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJw10n1ME3cYB/ATsKG4AQ01VKSMMdIgUUAqKC2u31JooVDoFbAY5WW+MNcx
+CZLhHMs8HWwK/DEiooABA0bBOfcSiQgRz4GwZDTA0M2FGRUVZ6ubDBnTZeu2
+3HNNLs3nvvf87vd7nnt1W7ltpxfDMOx/1///wu+pzuje/CV7bjnoBkbTrp0/
+MhNE9kVyS6bPcIOMHAgX06M/bHmZLEf7s4fnXtspISswsK+1M2zj3zrBoXhL
+y+4+oHCRw9EyOtkatembK4IjcOfY7amg734lR8J1rL3+XtVzsgodu5Na3t3A
+8IKj4B+2Rxdb6kWOBlv3UUVlnTd5NRpqzsibedExmGy4foN1i8/HoTWkdHxg
+SlxvLcrS3iycv/SC3hePxKuHNrVZ58hqfFp0d6q/7SZ5HS44Fua6t/xI50nA
+rMlcanfNkRPhrq6WDl0Uz78e833duyabfag/G5BY0qPCCj9yEuzvjaxdWBNA
+1uBB0A+LJZfEfmsh93SpnFpxHsmYtv/jCVgUvRHDVx95ah+Ifh0TVfkFX4eL
+1uFoVlxnklNcDwjzdQV/5RMomAOUMykTTW3LKNejMEO7ryuH5snpcTC+MzUk
+haE8BbEJhjhtx7xwPi4FQ+v06g+qf6bzGmAxR7mbx51CvzgD/MYb9xeH/0L9
+S8Xj5Cjdb33UXy4V7Y9XHVdGLlCeBpt9iu1/8QflachwVlXe+myRciPsnuyB
+1TFkzgiz8f7g9lCx3oT255J3RuTi+iacNjruSVbNUp4O2eX7TacaxihPR5y3
+Jlg18z3tPwPPEsZUMyb6XrkMGKOrAm/sWKDcjL0FW2cv19J8OTNGp9+olY17
+UX8ycbMn33/JoNi/TGyfji9+pBPnnYVY7xH/orsvUZ4F47D3rs/X+1Nugd/7
+hUcUy8icBexE9VbnNnqeyUbsnTJ9t0NKeTacfR1LNelLKc+Byav3zycMzYvL
+wXm1pbZESvNirLhWdDBvj8MpGFY8XNkrjVjppn5Y0SG9nvnFJx7BvBXlH5YO
+3drhywv1LJQBg5U/LQkUDBZnWhdlr0QGCeZYdD2NKYluWy6YZ/Hkr8lG5cfB
+VG/DyXz+gNxnBdXbUJ/XWa4JDaF6G8oMNRJDP5m3Ya9jS1MvT2ZyoWbrv90f
+QUYusovVCUVzCqrPheT278qxAnofn4sTMdZDR+toP0werFfebqw5S/tFHjSy
+igrFqIz/F4pSaz0=
+      "]]}, 
+    {RGBColor[0.880722, 0.611041, 0.142051], PointSize[0.01388888888888889], 
+     AbsoluteThickness[1.6], LineBox[CompressedData["
+1:eJw1kA9Qk3UYx4djtOx2TWIJ2cmg1YS6dEPdRHBfh24IY2PbK2BHZ7yCetFl
+E+w0Et8JpXUScHUXmV1RCKc3uSmiF1FA4Z3pWYg7xThn4EGGBOPfRECo7n3e
+9+699z7v5/d9nuf3xLB7HAWLRCKR/b/3/y//BAzqnZyvO2eqjX5gMOHzAnnU
+Q2IpjojZ2cOVj4jlSH8y1Xbi4zniCPxSu9+/vX+BOBLq3vO3VOdC2nl+HoXu
+tTEleWJiJRTPmBYfvxZKHAtzp7Ij+bKEWIUoy8gnx3RhxC/hRQUiLiwXeAV2
+dd0TDdUI5+Px9MH1/Z/9KtR7BdcXLoxzV4R+r0L8Q1qE7NtFxKtQtG/xP3Kz
+MJ8Gq+eX2ZjXhfm1OOWe7ItumiVOgC12zZuVXmEfq1GmiZ7/9KMJ4jXQv990
+w/PHCPFaKCukw4/+GiTWocofdeX+QT+xHjNxDNP63u/E6zAzEWlsefwVcSKk
+DRIDU99p4Hk9PPJLUk/XDeIkxMVXyfRNt4mT4brrlqi+7CXeAHd1dXT3ZcEb
+EAwpVyzt8xEDrz2XdPdr+VWeOaA7EF4RLPSS34ik/ixLneZHfh5uIwxVau90
+uY/mMyK3sszlONBH3oiwl/es0zfeJ58CR5hExj07Sj4Fkc7H9uWicfKboEkJ
+stXC/rhN2KYzXtVqJslvhu+NBll9LDG3GUtr5ln1EWHfJlzUvFs8sJPqcSY0
+qLSNbF2AvBkZJ3OHB9TD5M3Y2izlTugHyKei94P5LFZ1m3wqvPEuTzZ7nvwW
+dLTlOmtudtF+tsC/13Utf+4e7ScNJlfMnYrxUfJpuDn51I7jS4Lk09HI7Hrb
+pZwjn47CWN3eqIAIvLfAJT469NMBMc+cBTnHSk4pDknIZ+DWjvLivL4w8hm4
+o+jRPvjiCfJWFBU+0O2+SMxZYf8moThoF7wNG5Tv9EaWCnkbcrJOZ+WbhfqZ
+6PEZ8lqbqT8ycbSohZnqCaHzmUg6e2jV6HcL/PztmUgZ6ez21s7S/eyw1irH
+6mTTPMOO4AtjzSfjpui+dngLNLv3hU5Q3o4/2b/DRw+PUd4B40rPxLLSAOUd
++Ll163T2JWGfDmg/rHIzJcTtDnQMJSutK+m8yInw4lJTi5XqwYm262ziW+HU
+j3Ni/2B9MNRC87Q7YUoc8G/7/iHlGZz+TV22XTlDeQZnMhTZS/LnDP8CZfh/
+Jw==
+      "]]}}, {}, {}, {{}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0., 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->All,
+  Method->{"CoordinatesToolOptions" -> {"DisplayFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& ), "CopiedValueFunction" -> ({
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 1, 2][#]& )[
+         Part[#, 1]], 
+        (Part[{{Identity, Identity}, {Identity, Identity}}, 2, 2][#]& )[
+         Part[#, 2]]}& )}},
+  PlotRange->{{0., 81.}, {-6.688192670898039, 5.4182803683168625`}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.734368543441699*^9, 3.734368548583411*^9}, {
+   3.734369096071587*^9, 3.734369120493499*^9}, {3.734369195795698*^9, 
+   3.734369236837627*^9}, 3.734369330683354*^9, {3.734369382791457*^9, 
+   3.734369389536631*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Quest on the phased dataset", "Title",
+ CellChangeTimes->{{3.7343578322997313`*^9, 3.7343578432803*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"oxyPhasedYesMatlab", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</Users/ettoremariotti/Desktop/Semmestre/BCI/Project/BCI-\
+ThoughtRecognition/data_students/segnali_belli/NIRSoxy_yesFasato.mat\>\"", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numSamplesPhasedOxyYes", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Dimensions", "[", "oxyPhasedYesMatlab", "]"}], "[", 
+    RowBox[{"[", "3", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phasedOxyYesRaw", " ", "=", "  ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{"oxyPhasedYesMatlab", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "1", ",", "x"}], "]"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "numSamplesPhasedOxyYes"}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.734357912612638*^9, 3.734357913278862*^9}, {
+  3.734358342895506*^9, 3.734358405503683*^9}, {3.734369285261847*^9, 
+  3.734369311207212*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"oxyPhasedNoMatlab", " ", "=", " ", 
+   RowBox[{
+   "Import", "[", 
+    "\"\</Users/ettoremariotti/Desktop/Semmestre/BCI/Project/BCI-\
+ThoughtRecognition/data_students/segnali_belli/NIRSoxy_noFasato.mat\>\"", 
+    "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"numSamplesPhasedOxyNo", " ", "=", " ", 
+   RowBox[{
+    RowBox[{"Dimensions", "[", "oxyPhasedNoMatlab", "]"}], "[", 
+    RowBox[{"[", "3", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phasedOxyNoRaw", " ", "=", "  ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{"oxyPhasedNoMatlab", "[", 
+       RowBox[{"[", 
+        RowBox[{"1", ",", "1", ",", "x"}], "]"}], "]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "numSamplesPhasedOxyNo"}], "}"}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.734358436753152*^9, 3.734358459312105*^9}, {
+  3.734369276366171*^9, 3.734369280998094*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"phasedOxyYesRaw80", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{
+         RowBox[{"Dimensions", "[", 
+          RowBox[{"phasedOxyNoRaw", "[", 
+           RowBox[{"[", "#", "]"}], "]"}], "]"}], "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "\[Equal]", "81"}], ",", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"phasedOxyYesRaw80", ",", 
+         RowBox[{"Transpose", "@", 
+          RowBox[{"Drop", "[", 
+           RowBox[{
+            RowBox[{"Transpose", "@", 
+             RowBox[{"phasedOxyYesRaw", "[", 
+              RowBox[{"[", "#", "]"}], "]"}]}], ",", 
+            RowBox[{"-", "1"}]}], "]"}]}]}], "]"}], ",", " ", 
+       RowBox[{"AppendTo", "[", 
+        RowBox[{"phasedOxyYesRaw80", ",", 
+         RowBox[{"phasedOxyYesRaw", "[", 
+          RowBox[{"[", "#", "]"}], "]"}]}], "]"}]}], "]"}], "&"}], "/@", 
+    RowBox[{"Range", "[", "numSamplesPhasedOxyYes", "]"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"phasedOxyNoRaw80", "=", 
+   RowBox[{"{", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"Dimensions", "[", 
+         RowBox[{"phasedOxyNoRaw", "[", 
+          RowBox[{"[", "#", "]"}], "]"}], "]"}], "[", 
+        RowBox[{"[", "2", "]"}], "]"}], "\[Equal]", "81"}], ",", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"phasedOxyNoRaw80", ",", 
+        RowBox[{"Transpose", "@", 
+         RowBox[{"Drop", "[", 
+          RowBox[{
+           RowBox[{"Transpose", "@", 
+            RowBox[{"phasedOxyNoRaw", "[", 
+             RowBox[{"[", "#", "]"}], "]"}]}], ",", 
+           RowBox[{"-", "1"}]}], "]"}]}]}], "]"}], ",", " ", 
+      RowBox[{"AppendTo", "[", 
+       RowBox[{"phasedOxyNoRaw80", ",", 
+        RowBox[{"phasedOxyNoRaw", "[", 
+         RowBox[{"[", "#", "]"}], "]"}]}], "]"}]}], "]"}], "&"}], "/@", 
+   RowBox[{"Range", "[", "numSamplesPhasedOxyNo", "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.734358478490432*^9, 3.734358551467485*^9}, {
+  3.73435894075063*^9, 3.734358946300151*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"reducedPhasedOxyNo80", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{"DimensionReduce", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "@", "#"}], ",", "2", ",", 
+        RowBox[{
+        "Method", "\[Rule]", "\"\<PrincipalComponentsAnalysis\>\""}]}], "]"}],
+       "]"}], "&"}], "/@", "phasedOxyNoRaw80"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"reducedPhasedOxyYes80", " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Transpose", "[", 
+      RowBox[{"DimensionReduce", "[", 
+       RowBox[{
+        RowBox[{"Transpose", "@", "#"}], ",", "2", ",", 
+        RowBox[{
+        "Method", "\[Rule]", "\"\<PrincipalComponentsAnalysis\>\""}]}], "]"}],
+       "]"}], "&"}], "/@", "phasedOxyYesRaw80"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.734358581818162*^9, 3.734358599100398*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"labeledPhasedYes", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"reducedPhasedOxyYes80", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "1"}], "]"}], "]"}], "\[Rule]", " ", 
+      RowBox[{"ToString", "@", "i"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "30"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"labeledPhasedNo", " ", "=", " ", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"reducedPhasedOxyNo80", "[", 
+       RowBox[{"[", 
+        RowBox[{"i", ",", "1"}], "]"}], "]"}], "\[Rule]", 
+      RowBox[{"ToString", "@", "i"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"i", ",", "30"}], "}"}]}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7343586724123383`*^9, 3.7343586839499474`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"labeledPhasedClusterYes", " ", "=", " ", 
+  RowBox[{
+   RowBox[{"FindClusters", "[", 
+    RowBox[{"labeledPhasedNo", ",", 
+     RowBox[{"Method", "\[Rule]", "\"\<MeanShift\>\""}]}], "]"}], "//", 
+   "Column"}]}]], "Input",
+ CellChangeTimes->{{3.734358705025723*^9, 3.734358710282783*^9}, {
+  3.734359018645277*^9, 3.7343590216287317`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"1\"\>", ",", "\<\"14\"\>", ",", "\<\"27\"\>"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"2\"\>", ",", "\<\"11\"\>", ",", "\<\"13\"\>"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"3\"\>", ",", "\<\"6\"\>", ",", "\<\"7\"\>", 
+       ",", "\<\"8\"\>", ",", "\<\"10\"\>", ",", "\<\"12\"\>", 
+       ",", "\<\"17\"\>", ",", "\<\"18\"\>", ",", "\<\"19\"\>", 
+       ",", "\<\"20\"\>", ",", "\<\"22\"\>", ",", "\<\"25\"\>", 
+       ",", "\<\"26\"\>", ",", "\<\"28\"\>", ",", "\<\"29\"\>"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"4\"\>", ",", "\<\"5\"\>"}], "}"}]},
+    {
+     RowBox[{"{", "\<\"9\"\>", "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"\<\"15\"\>", ",", "\<\"16\"\>", ",", "\<\"21\"\>", 
+       ",", "\<\"23\"\>", ",", "\<\"24\"\>", ",", "\<\"30\"\>"}], "}"}]}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{3.734359022157503*^9, 3.7343693187508307`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"check", " ", "=", " ", 
+    RowBox[{"FindClusters", "[", 
+     RowBox[{
+      RowBox[{"reducedPhasedOxyYes80", "[", 
+       RowBox[{"[", 
+        RowBox[{"All", ",", "1"}], "]"}], "]"}], ",", 
+      RowBox[{"Method", "\[Rule]", "\"\<MeanShift\>\""}]}], "]"}]}], ";"}], 
+  "\n"}]], "Input",
+ CellChangeTimes->{
+  3.734358732299863*^9, {3.734358886283064*^9, 3.734358911068988*^9}, {
+   3.734358997652505*^9, 3.734359002219139*^9}}],
+
+Cell[BoxData[
+ TemplateBox[{
+  "FindClusters","nosup",
+   "\"FindClusters does not support this type of data. \"",2,270,42,
+   30615767488284285297,"Local"},
+  "MessageTemplate"]], "Message", "MSG",
+ CellChangeTimes->{{3.734358982718157*^9, 3.734359002613551*^9}, 
+   3.734369321461584*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1994", "+", "18"}]], "Input",
+ CellChangeTimes->{{3.734372976333852*^9, 3.734373005564803*^9}, {
+  3.734373083948244*^9, 3.734373098380221*^9}}],
+
+Cell[BoxData["2012"], "Output",
+ CellChangeTimes->{{3.734372979370647*^9, 3.734373005885901*^9}, {
+  3.734373096072914*^9, 3.734373099201593*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{780, 756},
-WindowMargins->{{118, Automatic}, {Automatic, 0}},
+WindowSize->{1217, 756},
+WindowMargins->{{-11, Automatic}, {15, Automatic}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -1959,20 +2317,42 @@ Cell[5071, 136, 1139, 30, 103, "Output"]
 Cell[6225, 169, 370, 10, 32, "Input"],
 Cell[CellGroupData[{
 Cell[6620, 183, 131, 2, 32, "Input"],
-Cell[6754, 187, 47562, 872, 265, "Output"]
+Cell[6754, 187, 47601, 873, 144, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54353, 1064, 301, 7, 32, "Input"],
-Cell[54657, 1073, 1012, 24, 67, "Output"]
+Cell[54392, 1065, 301, 7, 32, "Input"],
+Cell[54696, 1074, 1012, 24, 67, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[55706, 1102, 340, 8, 32, "Input"],
-Cell[56049, 1112, 44939, 814, 155, "Output"]
+Cell[55745, 1103, 340, 8, 32, "Input"],
+Cell[56088, 1113, 45064, 817, 216, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101189, 1935, 373, 7, 32, "Input"],
+Cell[101565, 1944, 4201, 82, 238, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105815, 2032, 110, 1, 92, "Title"],
+Cell[105928, 2035, 1033, 26, 96, "Input"],
+Cell[106964, 2063, 977, 25, 96, "Input"],
+Cell[107944, 2090, 2250, 60, 159, "Input"],
+Cell[110197, 2152, 886, 24, 54, "Input"],
+Cell[111086, 2178, 837, 24, 54, "Input"],
+Cell[CellGroupData[{
+Cell[111948, 2206, 363, 8, 32, "Input"],
+Cell[112314, 2216, 1127, 29, 121, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113478, 2250, 477, 13, 54, "Input"],
+Cell[113958, 2265, 290, 7, 24, "Message"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114285, 2277, 168, 3, 32, "Input"],
+Cell[114456, 2282, 146, 2, 32, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
 ]
 *)
-
-(* End of internal cache information *)
 

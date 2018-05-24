@@ -1,0 +1,434 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15341,        424]
+NotebookOptionsPosition[     14128,        375]
+NotebookOutlinePosition[     14483,        391]
+CellTagsIndexPosition[     14440,        388]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Transpose", "@", 
+   RowBox[{"eegStandardLengthYes", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], "//", "ListLinePlot"}]], "Input",
+ CellChangeTimes->{{3.734688648624447*^9, 3.7346888861733017`*^9}}],
+
+Cell[BoxData["$Aborted"], "Output",
+ CellChangeTimes->{{3.7346886594260283`*^9, 3.734688770103253*^9}, {
+  3.734688811578815*^9, 3.7346889047399282`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ArrayPlot", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.734688681042795*^9, 3.73468868411305*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  RasterBox[{{72.58816328729505, 75.78057343975897, 62.78453345512826, 
+   76.16506753972263, 94.68021467510154, 82.42558055274272, 
+   51.222815809593975`, 73.80793668828451, 75.58608447511638, 0., 
+   86.50865460451358, 47.537746018124054`, 91.22949658089193}, {
+   72.3410834062013, 75.74738759072997, 62.28582426610562, 76.33680588204659, 
+   94.26063880026715, 82.43752446496133, 51.39450551716563, 73.73768208515474,
+    75.38496268465623, 0.15056896458744973`, 86.6849404825528, 
+   47.469863506635335`, 91.07019208008263}}, {{0, 0}, {13, 2}}, {
+   0, 94.99203492442713}],
+  Frame->Automatic,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{{3.7346886844392643`*^9, 3.734688698122196*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"eegStandardLengthYes", "[", 
+   RowBox[{"[", "1", "]"}], "]"}], "//", "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.734688908870327*^9, 3.734688958145504*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"13", ",", "5101"}], "}"}]], "Output",
+ CellChangeTimes->{{3.734688913403831*^9, 3.734688958419712*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Transpose", "@", 
+   RowBox[{"eegStandardLengthYes", "[", 
+    RowBox[{"[", "1", "]"}], "]"}]}], "//", "Dimensions"}]], "Input",
+ CellChangeTimes->{{3.734688966984475*^9, 3.734688970799055*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5101", ",", "13"}], "}"}]], "Output",
+ CellChangeTimes->{{3.7346889685966263`*^9, 3.7346889710909433`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Take", "[", 
+   RowBox[{
+    RowBox[{"Transpose", "@", 
+     RowBox[{"eegStandardLengthYes", "[", 
+      RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+    RowBox[{"{", "300", "}"}]}], "]"}], "//", "ArrayPlot"}]], "Input",
+ CellChangeTimes->{{3.734688977692168*^9, 3.7346890072782288`*^9}, {
+  3.734689044724387*^9, 3.734689046084299*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  RasterBox[{{66.75800169263754, 80.8817605728844, 56.401103906002405`, 
+   80.35063528072043, 85.37960031559342, 66.56970625120233, 
+   60.166260953358446`, 52.49344193998314, 62.5414174846435, 0., 
+   89.04623183241519, 47.312860068315246`, 80.83991937283919}}, {{0, 0}, {13, 
+   1}}, {0, 92.96105736781008}],
+  Frame->Automatic,
+  FrameLabel->{None, None},
+  FrameTicks->{{None, None}, {None, None}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{
+   "DefaultBoundaryStyle" -> Automatic, "DefaultPlotStyle" -> 
+    Automatic}]], "Output",
+ CellChangeTimes->{3.734689046449298*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Animate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", 
+       RowBox[{"eegStandardLengthYes", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Floor", "@", "x"}], "}"}]}], "]"}], "//", "ArrayPlot"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "5101"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7346890635232964`*^9, 3.734689092232954*^9}, {
+  3.734689157019433*^9, 3.734689159229517*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 2749.008165359497, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 1, 5101}}, Typeset`size$$ = {360., {19., 23.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$25078$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$25078$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ArrayPlot[
+        Take[
+         Transpose[
+          Part[$CellContext`eegStandardLengthYes, 1]], {
+          Floor[$CellContext`x$$]}]], 
+      "Specifications" :> {{$CellContext`x$$, 1, 5101, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {55., 61.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7346890940212603`*^9, 3.734689159618355*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Animate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", 
+       RowBox[{"eegStandardLengthYes", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Floor", "@", "x"}], "}"}]}], "]"}], "//", "ArrayPlot"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "5101"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.734689255898219*^9, 3.734689256027194*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 4703.742929458618, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 1, 5101}}, Typeset`size$$ = {360., {19., 23.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$45133$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$45133$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ArrayPlot[
+        Take[
+         Transpose[
+          Part[$CellContext`eegStandardLengthYes, 2]], {
+          Floor[$CellContext`x$$]}]], 
+      "Specifications" :> {{$CellContext`x$$, 1, 5101, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {55., 61.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7346892564507027`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Animate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", 
+       RowBox[{"eegStandardLengthNo", "[", 
+        RowBox[{"[", "1", "]"}], "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Floor", "@", "x"}], "}"}]}], "]"}], "//", "ArrayPlot"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "5101"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.734689242028613*^9, 3.734689242976886*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 1444.4779739379883`, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 1, 5101}}, Typeset`size$$ = {360., {19., 23.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$38774$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$38774$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ArrayPlot[
+        Take[
+         Transpose[
+          Part[$CellContext`eegStandardLengthNo, 1]], {
+          Floor[$CellContext`x$$]}]], 
+      "Specifications" :> {{$CellContext`x$$, 1, 5101, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {55., 61.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.7346892436567802`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Animate", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Take", "[", 
+     RowBox[{
+      RowBox[{"Transpose", "@", 
+       RowBox[{"eegStandardLengthNo", "[", 
+        RowBox[{"[", "2", "]"}], "]"}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Floor", "@", "x"}], "}"}]}], "]"}], "//", "ArrayPlot"}], ",", 
+   
+   RowBox[{"{", 
+    RowBox[{"x", ",", "1", ",", "5101"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.734689272755411*^9, 3.734689272830462*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`x$$ = 64.79085540771484, Typeset`show$$ = 
+    True, Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`x$$], 1, 5101}}, Typeset`size$$ = {360., {19., 23.}}, 
+    Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
+    True, $CellContext`x$53873$$ = 0}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, "Variables" :> {$CellContext`x$$ = 1}, 
+      "ControllerVariables" :> {
+        Hold[$CellContext`x$$, $CellContext`x$53873$$, 0]}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> ArrayPlot[
+        Take[
+         Transpose[
+          Part[$CellContext`eegStandardLengthNo, 2]], {
+          Floor[$CellContext`x$$]}]], 
+      "Specifications" :> {{$CellContext`x$$, 1, 5101, 
+         AppearanceElements -> {
+          "ProgressSlider", "PlayPauseButton", "FasterSlowerButtons", 
+           "DirectionButton"}}}, 
+      "Options" :> {
+       ControlType -> Animator, AppearanceElements -> None, DefaultBaseStyle -> 
+        "Animate", DefaultLabelStyle -> "AnimateLabel", SynchronousUpdating -> 
+        True, ShrinkingDelay -> 10.}, "DefaultOptions" :> {}],
+     ImageSizeCache->{405., {55., 61.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Animate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.734689273370255*^9}]
+}, Open  ]]
+},
+WindowSize->{808, 756},
+WindowMargins->{{150, Automatic}, {48, Automatic}},
+FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
+2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 233, 5, 32, "Input"],
+Cell[816, 29, 154, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1007, 36, 127, 2, 32, "Input"],
+Cell[1137, 40, 925, 19, 84, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2099, 64, 196, 4, 32, "Input"],
+Cell[2298, 70, 143, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2478, 78, 229, 5, 32, "Input"],
+Cell[2710, 85, 147, 3, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2894, 93, 367, 9, 32, "Input"],
+Cell[3264, 104, 631, 15, 57, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3932, 124, 533, 15, 54, "Input"],
+Cell[4468, 141, 2037, 42, 133, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6542, 188, 482, 14, 54, "Input"],
+Cell[7027, 204, 2015, 42, 133, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9079, 251, 481, 14, 54, "Input"],
+Cell[9563, 267, 2016, 42, 133, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11616, 314, 481, 14, 54, "Input"],
+Cell[12100, 330, 2012, 42, 133, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

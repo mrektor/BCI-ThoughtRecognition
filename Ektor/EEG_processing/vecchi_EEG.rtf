@@ -1,0 +1,84 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 def export_signals(channels):\
+    time_instances=[];\
+    dim=channels.shape;\
+    #find the length min of the signal in the specified temporal instance\
+    # for NIRS signal ==80 \
+    length_min=len(channels[0,1]);\
+    for i in range (0,dim[1]):\
+        single_measurement=channels[0,i];\
+        single_length=single_measurement.shape[0]\
+        if(single_length<length_min):\
+                length_min=single_length;\
+    #export the signals\
+    for i in range (0,dim[1]):\
+        single_measurement=channels[0,i];\
+        dim1=single_measurement.shape;\
+        time_instance=[];\
+        for j  in range (0,dim1[1]):\
+            if(len(single_measurement[:,j])>length_min):\
+                single_signal=single_measurement[:,j][0:length_min]\
+            else:\
+                single_signal=single_measurement[:,j]\
+            #put in a list \
+            time_instance.append(np.asarray(single_signal).reshape(len(single_signal),1).T);\
+       # create the matrix of the signals per a single time instance \
+        time_instance=np.concatenate(time_instance);\
+        time_instances.append(time_instance);   \
+    return time_instances;\
+\
+\
+\
+\
+\
+\
+def get_feature_matrix_and_labels(channel_structure, feature_dictionary,label,features_extracted):\
+    list_train=[]\
+    list_labels=[]\
+    cont=0;\
+    peak_signal=features_extracted["peak_signal"]\
+    f_peak_signal=peak_signal["f_cell"];\
+    \
+    for time_instance in channel_structure:\
+        dim1=time_instance.shape\
+        for j  in range (0,dim1[0]):\
+            features=feature_extraction(time_instance[j,:],feature_dictionary,f_peak_signal[0,cont])\
+            list_train.append([features]);\
+            cont=cont+1;\
+        labels=get_labels(dim1[0],label);\
+        list_labels.append([labels]);\
+        \
+    train_TX=np.concatenate(list_train)\
+    labels=np.concatenate(list_labels,axis=1)\
+    \
+    return train_TX,labels.T.reshape(labels.size)\
+\
+\
+def get_feature_matrix(channels,feature_dictionary,features_extracted):\
+    list_train=[]\
+    list_labels=[]\
+    cont=0;\
+    peak_signal=features_extracted["peak_signal"]\
+    f_peak_signal=peak_signal["f_cell"];\
+    for time_instance in channel_structure:\
+        dim1=time_instace.shape\
+        print(dim1)\
+        for j  in range (0,dim1[0]):\
+            features=feature_extraction(time_instance[j,:],feature_dictionary,f_peak_signal[0,cont])\
+            list_train.append([features]);\
+            cont=cont+1;\
+    train_TX=np.concatenate(list_train)\
+    return train_TX\
+\
+def get_labels(number, string):\
+    if(string=="No"):\
+        return np.zeros(number)    \
+    if(string=="Yes"):\
+        return np.ones(number)\
+    }
