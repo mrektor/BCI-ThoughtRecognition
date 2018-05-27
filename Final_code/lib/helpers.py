@@ -36,7 +36,7 @@ def add_powers(tx, degree):
 
 def get_accuracy(predicted_labels, true_labels):
      if (predicted_labels.size == true_labels.size):
-        return  np.sum(predicted_labels ==  true_labels )/len( true_labels)
+        return  np.mean(predicted_labels ==  true_labels )
    
 
    

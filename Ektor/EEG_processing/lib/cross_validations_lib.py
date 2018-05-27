@@ -16,7 +16,7 @@ def build_k_indices(y, k_fold, seed):
                  for k in range(k_fold)]
     return np.array(k_indices)
 
-def cross_validation_logistic_regularized(Y,X, degrees, lambdas, k_fold, seed, max_iters):
+def cross_validation_logistic_regularized(Y, X, degrees, lambdas, k_fold, seed, max_iters):
     
     # Get the indices so that we get the k'th subgroup in test, others in train, for each k
     k_indices = build_k_indices(Y, k_fold, seed)
@@ -72,7 +72,7 @@ def cross_validation_one_fold_logistic_regularized(y_cross_val_train, y_cross_va
     
     # For each degree, compute the least squares weights, the predictions and the accuracies
     for deg_id, deg in enumerate(degrees):
-        print('++ Degree', deg, '++')
+        #print('++ Degree', deg, '++')
                 
         # Add powers of the chosen columns
         len_data = tx_cross_val_train.shape[1]
@@ -83,7 +83,7 @@ def cross_validation_one_fold_logistic_regularized(y_cross_val_train, y_cross_va
         
         for lambda_id, single_lambda in enumerate(lambdas):
                 
-                print('>> Lambda', single_lambda, '<<')
+                #print('>> Lambda', single_lambda, '<<')
                 # Compute the best weights on the training set
                 logreg = linear_model.LogisticRegression(penalty='l1',C=1/single_lambda, class_weight="balanced",max_iter=max_iters)
                 logreg.fit(tx_cross_val_train,y_cross_val_train )
@@ -110,14 +110,14 @@ def cross_validation_one_fold_logistic_regularized(y_cross_val_train, y_cross_va
 
 
 
-def cross_validation_SVM(Y,X, C_parameters, kernel_types,k_fold, seed, max_iters):
+def cross_validation_SVM(Y, X, C_parameters, kernel_types, k_fold, seed, max_iters):
     
     # Get the indices so that we get the k'th subgroup in test, others in train, for each k
     k_indices = build_k_indices(Y, k_fold, seed)
     
     # Initialize matrix of computed accuracies for each degree and each fold
-    accuracies_train_by_fold = np.zeros([len(C_parameters),len(kernel_types), k_fold])
-    accuracies_test_by_fold = np.zeros([len(C_parameters),len(kernel_types), k_fold])
+    accuracies_train_by_fold = np.zeros([len(C_parameters), len(kernel_types), k_fold])
+    accuracies_test_by_fold = np.zeros([len(C_parameters), len(kernel_types), k_fold])
 
     
     for k in range(k_fold):
@@ -137,7 +137,7 @@ def cross_validation_SVM(Y,X, C_parameters, kernel_types,k_fold, seed, max_iters
         # Compute the accuracies for each degree
         accuracies_train_by_fold[:,:,k], accuracies_test_by_fold[:,:,k] = cross_validation_one_fold_SVM\
             (Y_cross_val_train, Y_cross_val_test, X_cross_val_train, X_cross_val_test, \
-                                 C_parameters, kernel_types,max_iters)
+                                 C_parameters, kernel_types, max_iters)
     # Compute the mean accuracies over the folds, for each degree
     mean_accuracies_train = np.mean(accuracies_train_by_fold, axis=2)
     mean_accuracies_test = np.mean(accuracies_test_by_fold, axis=2)
@@ -174,17 +174,17 @@ def cross_validation_one_fold_SVM(y_cross_val_train, y_cross_val_test, tx_cross_
         
     for C_id, single_C in enumerate(C_parameters):
                 
-        print('>> Penalty parameter C', single_C, '<<')
+        #print('>> Penalty parameter C', single_C, '<<')
                 
         for kernel_id, single_kernel in enumerate(kernel_types):
-            print('>> Type of Kernel ',single_kernel, '<<')
+            #print('>> Type of Kernel ',single_kernel, '<<')
                 
            
                 
                 # Compute the best weights on the training set
             clf = svm.SVC(C=single_C, cache_size=200, class_weight=None, coef0=0.0,
         decision_function_shape='ovr', degree=3, gamma='auto', kernel=single_kernel,
-        max_iter=-1, probability=False, random_state=None, shrinking=True,
+        max_iter=max_iters, probability=False, random_state=None, shrinking=True,
         tol=0.001, verbose=False)
             clf.fit(tx_cross_val_train,y_cross_val_train )  
 
@@ -201,7 +201,7 @@ def cross_validation_one_fold_SVM(y_cross_val_train, y_cross_val_test, tx_cross_
                         np.sum(y_predicted_cross_val_test == y_cross_val_test)/len(y_cross_val_test)
 
 
-            print(accuracies_test[C_id,kernel_id],accuracies_train[C_id,kernel_id])
+            #print(accuracies_test[C_id,kernel_id],accuracies_train[C_id,kernel_id])
         
         
     return accuracies_train, accuracies_test

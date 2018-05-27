@@ -9,6 +9,5 @@ run('EEGyesAllFeatures.m')
 run('EEGnoAllFeatures.m')
 
 %% extracting features with windowing
-
 run('windowNoFeatures.m')
 run('windowYesFeatures.m')
