@@ -27,7 +27,7 @@ def cross_validation_logistic_regularized(Y, X, degrees, lambdas, k_fold, seed, 
 
     
     for k in range(k_fold):
-        print('--- Fold', k, '---')
+        #print('--- Fold', k, '---')
         # Create the testing set for this fold number
         k_index = k_indices[k] # Indices of the testing set for fold k
         Y_cross_val_test = Y[k_index]
@@ -58,8 +58,8 @@ def cross_validation_logistic_regularized(Y, X, degrees, lambdas, k_fold, seed, 
     best_accuracy_test = mean_accuracies_test_by_deg[max_id_deg_test,max_id_lambda]
     corresponding_accuracy_train = mean_accuracies_train_by_deg[max_id_deg_test,max_id_lambda]
     
-    print('Best accuracy test =', best_accuracy_test, 'with degree =', best_deg , 'lambda=',best_lambda)
-    print('Corresponding accuracy train =', corresponding_accuracy_train)
+    #print('Best accuracy test =', best_accuracy_test, 'with degree =', best_deg , 'lambda=',best_lambda)
+    #print('Corresponding accuracy train =', corresponding_accuracy_train)
     
     return best_deg, best_lambda, best_accuracy_test, corresponding_accuracy_train                        
 
@@ -121,7 +121,7 @@ def cross_validation_SVM(Y, X, C_parameters, kernel_types, k_fold, seed, max_ite
 
     
     for k in range(k_fold):
-        print('--- Fold', k, '---')
+        #print('--- Fold', k, '---')
         # Create the testing set for this fold number
         k_index = k_indices[k] # Indices of the testing set for fold k
         Y_cross_val_test = Y[k_index]
@@ -154,8 +154,8 @@ def cross_validation_SVM(Y, X, C_parameters, kernel_types, k_fold, seed, max_ite
     best_accuracy_test = mean_accuracies_test[max_id_C_parameter,max_id_kernel]
     corresponding_accuracy_train = mean_accuracies_train[max_id_C_parameter,max_id_kernel]
     
-    print('Best accuracy test =', best_accuracy_test , 'Penalty parameter=',best_C_parameter, 'kernel type=',best_kernel_type)
-    print('Corresponding accuracy train =', corresponding_accuracy_train)
+    #print('Best accuracy test =', best_accuracy_test , 'Penalty parameter=',best_C_parameter, 'kernel type=',best_kernel_type)
+    #print('Corresponding accuracy train =', corresponding_accuracy_train)
     
     return best_C_parameter, best_kernel_type, best_accuracy_test, corresponding_accuracy_train
     
@@ -177,11 +177,8 @@ def cross_validation_one_fold_SVM(y_cross_val_train, y_cross_val_test, tx_cross_
         #print('>> Penalty parameter C', single_C, '<<')
                 
         for kernel_id, single_kernel in enumerate(kernel_types):
-            #print('>> Type of Kernel ',single_kernel, '<<')
-                
-           
-                
-                # Compute the best weights on the training set
+            #print('>> Type of Kernel ',single_kernel, '<')
+            # Compute the best weights on the training set
             clf = svm.SVC(C=single_C, cache_size=200, class_weight=None, coef0=0.0,
         decision_function_shape='ovr', degree=3, gamma='auto', kernel=single_kernel,
         max_iter=max_iters, probability=False, random_state=None, shrinking=True,
@@ -205,4 +202,108 @@ def cross_validation_one_fold_SVM(y_cross_val_train, y_cross_val_test, tx_cross_
         
         
     return accuracies_train, accuracies_test
+
+
+
+def hyper_SVM_multiple_executions(X, Y, C_parameters, kernel_types, max_iters, fraction_train_test=0.7, num_experiments):
+    
+    accuracies_train = np.zeros([len(C_parameters),len(kernel_types)])
+    accuracies_test = np.zeros([len(C_parameters),len(kernel_types)])
+    seed=range(num_experiments)
+    # For each degree, compute the least squares weights, the predictions and the accuracies
+ 
+
+        
+        
+    for C_id, single_C in enumerate(C_parameters):
+                
+        #print('>> Penalty parameter C', single_C, '<<')
+                
+        for kernel_id, single_kernel in enumerate(kernel_types):
+            #print('>> Type of Kernel ',single_kernel, '<')
+            # Compute the best weights on the training set
+                for single_seed in seed
+                    [i1,i2]=split_matrix_two_blocks(X, fraction_train_test, 1-fraction_train_test,single_seed)
+        
+                    train=X[i1,:]
+                    labels_train=Y[i1]
+
+                    test= X[i2,:]
+                    labels_test=Y[i2]
+
+                    #SVM classifier definition
+                    clf = svm.SVC(C=best_C, cache_size=200, class_weight=None, coef0=0.0,
+                            decision_function_shape='ovr', degree=3, gamma='auto', kernel=best_kernel_type,
+                            max_iter=-1, probability=False, random_state=None, shrinking=True,
+                            tol=0.001, verbose=False)
+                    #SVM fit on train data
+                    clf.fit(train, labels_train)  
+
+
+                    #Accuracy on test
+                    predicted_labels_test = clf.predict(test)
+                    SVM_accuracy_test = get_accuracy(predicted_labels_test, labels_test)
+                    svm_total_acc_test.append(SVM_accuracy_test)
+
+
+                    #Accuracy on train
+                    predicted_labels_train = clf.predict(train)
+                    SVM_accuracy_train = get_accuracy(predicted_labels_train, labels_train)
+                    svm_total_acc_train.append(SVM_accuracy_train)
+
+                
+    
+
+
+         
+                # Compute the accuracies for each degree
+            accuracies_train[C_id,kernel_id] = np.mean(svm_total_acc_train)
+            accuracies_test[C_id,kernel_id] = np.mean(svm_total_acc_test)
+            #print(accuracies_test[C_id,kernel_id],accuracies_train[C_id,kernel_id])
+        
+        
+    return accuracies_train, accuracies_test
+
+
+
+def tuning_SVM(Y, X, C_parameters, kernel_types, k_fold, seed, max_iters, fraction_train_test=0.7, num_experiments):
+    
+    
+    # Initialize matrix of computed accuracies for each degree and each fold
+    accuracies_train_by_fold = np.zeros([len(C_parameters), len(kernel_types)])
+    accuracies_test_by_fold = np.zeros([len(C_parameters), len(kernel_types)])
+    
+       
+    # Compute the accuracies for each degree
+    accuracies_train[:,:], accuracies_test[:,:] =  hyper_SVM_multiple_executions(X, Y, C_parameters, kernel_types, max_iters, fraction_train_test, num_experiments)
+    # Compute the mean accuracies over the folds, for each degree
+    #mean_accuracies_train = np.mean(accuracies_train_by_fold, axis=2)
+    #mean_accuracies_test = np.mean(accuracies_test_by_fold, axis=2)
+    
+    # Get the index of the best accuracy in the testing set
+    
+    
+    max_id_C_parameter, max_id_kernel= \
+        np.unravel_index(accuracies_test.argmax(), accuracies_test.shape)
+    
+    # Find the optimal degree and the corresponding accuracies in the training and testing sets
+    best_C_parameter=C_parameters[max_id_C_parameter]
+    best_kernel_type=kernel_types[max_id_kernel]
+    best_accuracy_test = accuracies_test[max_id_C_parameter,max_id_kernel]
+    corresponding_accuracy_train = accuracies_train[max_id_C_parameter,max_id_kernel]
+    
+    print('Best accuracy test =', best_accuracy_test , 'Penalty parameter=',best_C_parameter, 'kernel type=',best_kernel_type)
+    print('Corresponding accuracy train =', corresponding_accuracy_train)
+    
+    return best_C_parameter, best_kernel_type, best_accuracy_test, corresponding_accuracy_train
+
+
+
+
+
+
+
+
+
+
 
