@@ -121,7 +121,7 @@ def cross_validation_SVM(Y, X, C_parameters, kernel_types, k_fold, seed, max_ite
 
     
     for k in range(k_fold):
-        print('--- Fold', k, '---')
+        #print('--- Fold', k, '---')
         # Create the testing set for this fold number
         k_index = k_indices[k] # Indices of the testing set for fold k
         Y_cross_val_test = Y[k_index]
@@ -154,8 +154,8 @@ def cross_validation_SVM(Y, X, C_parameters, kernel_types, k_fold, seed, max_ite
     best_accuracy_test = mean_accuracies_test[max_id_C_parameter,max_id_kernel]
     corresponding_accuracy_train = mean_accuracies_train[max_id_C_parameter,max_id_kernel]
     
-    print('Best accuracy test =', best_accuracy_test , 'Penalty parameter=',best_C_parameter, 'kernel type=',best_kernel_type)
-    print('Corresponding accuracy train =', corresponding_accuracy_train)
+    #print('Best accuracy test =', best_accuracy_test , 'Penalty parameter=',best_C_parameter, 'kernel type=',best_kernel_type)
+    #print('Corresponding accuracy train =', corresponding_accuracy_train)
     
     return best_C_parameter, best_kernel_type, best_accuracy_test, corresponding_accuracy_train
     

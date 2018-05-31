@@ -266,7 +266,7 @@ def hyper_SVM_multiple_executions(X, Y, C_parameters, kernel_types, max_iters, f
 
 
 
-def tuning_SVM(Y, X, C_parameters, kernel_types, k_fold, seed, max_iters, fraction_train_test=0.7, num_experiments):
+def tuning_SVM(Y, X, C_parameters, kernel_types, max_iters, fraction_train_test=0.7, num_experiments):
     
     
     # Initialize matrix of computed accuracies for each degree and each fold
