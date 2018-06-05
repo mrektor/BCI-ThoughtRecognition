@@ -18,8 +18,8 @@ Rs = 150;                                                   % Stopband Ripple (d
 [n,Ws] = cheb2ord(Wp,Ws,Rp,Rs);                             % Filter Order
 [z,p,k] = cheby2(n,Rs,Ws);                                  % Filter Design
 [sosbp,gbp] = zp2sos(z,p,k);                                % Convert To Second-Order-Section For Stability
-figure(3)
-freqz(sosbp, 2^16, Fs)                                      % Filter Bode Plot
+%figure(3)
+%freqz(sosbp, 2^16, Fs)                                      % Filter Bode Plot
 filtered = filtfilt(sosbp, gbp, double(data));    % Filter Signal
 
 w=50/(500/2);
@@ -29,45 +29,45 @@ for i=1:4
 filtered(:,i)=filter(num,den,filtered(:,i));
 end
 
-for i=1
- plot(data(i:i+5000,2)) 
- hold on
- plot(filtered(i:i+5000,2),'k'),
- hold off
- pause(1)
- legend('data', 'filtered', 'filteredHP')
-end
+% for i=1
+%  plot(data(i:i+5000,2)) 
+%  hold on
+%  plot(filtered(i:i+5000,2),'k'),
+%  hold off
+%  pause(1)
+%  legend('data', 'filtered', 'filteredHP')
+% end
 
 yes_start=find(eeg.onset==4);
 yes_end=find(eeg.onset==1);
-figure
+% figure
 for k=1:length(yes_start)
     yes_signal1{k}=filtered(yes_start(k):yes_end(k),:);
     yes_signalpre{k}=data(yes_start(k):yes_end(k),:);  
-    subplot(5,2,k), plot(yes_signal1{k}(:,1), 'k'), suptitle('yes filtrato 1')
+   % subplot(5,2,k), plot(yes_signal1{k}(:,1), 'k'), suptitle('yes filtrato 1')
 end  
-figure
-for k=1:length(yes_start)
-subplot(5,2,k), plot(yes_signalpre{k}(:,1)), suptitle('yes grezzo 1')
-end
+% figure
+% for k=1:length(yes_start)
+% subplot(5,2,k), plot(yes_signalpre{k}(:,1)), suptitle('yes grezzo 1')
+% end
 %% no
 no_start=find(eeg.onset==8);
 no_end=find(eeg.onset==2);
-figure
+%figure
 for k=1:length(no_start)
     no_signal1{k}=filtered(no_start(k):no_end(k),:);
     no_signalpre{k}=data(no_start(k):no_end(k),:);
-    subplot(5,2,k), plot(no_signal1{k}(:,1), 'k'), suptitle('no filtrato 1')
+    %subplot(5,2,k), plot(no_signal1{k}(:,1), 'k'), suptitle('no filtrato 1')
 end  
-figure
-for k=1:length(no_start)
-subplot(5,2,k), plot(no_signalpre{k}(:,1)), suptitle('no grezzo 1')
-end
+% figure
+% for k=1:length(no_start)
+% subplot(5,2,k), plot(no_signalpre{k}(:,1)), suptitle('no grezzo 1')
+% end
 %%
-figure
-plot(data(:,1))
-hold on
-plot(filtered(:,1))
+% figure
+% plot(data(:,1))
+% hold on
+% plot(filtered(:,1))
 %%
 save('block1.mat', 'no_signal1', 'yes_signal1')
 clear all
@@ -92,8 +92,8 @@ Rs = 150;                                                   % Stopband Ripple (d
 [n,Ws] = cheb2ord(Wp,Ws,Rp,Rs);                             % Filter Order
 [z,p,k] = cheby2(n,Rs,Ws);                                  % Filter Design
 [sosbp,gbp] = zp2sos(z,p,k);                                % Convert To Second-Order-Section For Stability
-figure(3)
-freqz(sosbp, 2^16, Fs)                                      % Filter Bode Plot
+% figure(3)
+% freqz(sosbp, 2^16, Fs)                                      % Filter Bode Plot
 filtered = filtfilt(sosbp, gbp, double(data));    % Filter Signal
 
 w=50/(500/2);
@@ -103,45 +103,45 @@ for i=1:4
 filtered(:,i)=filter(num,den,filtered(:,i));
 end
 
-for i=1
- plot(data(i:i+5000,2)) 
- hold on
- plot(filtered(i:i+5000,2),'k'),
- hold off
- pause(1)
- legend('data', 'filtered', 'filteredHP')
-end
+% for i=1
+%  plot(data(i:i+5000,2)) 
+%  hold on
+%  plot(filtered(i:i+5000,2),'k'),
+%  hold off
+%  pause(1)
+%  legend('data', 'filtered', 'filteredHP')
+% end
 
 yes_start=find(eeg.onset==4);
 yes_end=find(eeg.onset==1);
-figure
+% figure
 for k=1:length(yes_start)
     yes_signal2{k}=filtered(yes_start(k):yes_end(k),:);
     yes_signalpre{k}=data(yes_start(k):yes_end(k),:);  
-    subplot(5,2,k), plot(yes_signal2{k}(:,1), 'k'), suptitle('yes filtrato 1')
+%     subplot(5,2,k), plot(yes_signal2{k}(:,1), 'k'), suptitle('yes filtrato 1')
 end  
-figure
-for k=1:length(yes_start)
-subplot(5,2,k), plot(yes_signalpre{k}(:,1)), suptitle('yes grezzo 1')
-end
+% figure
+% for k=1:length(yes_start)
+% subplot(5,2,k), plot(yes_signalpre{k}(:,1)), suptitle('yes grezzo 1')
+% end
 %% no
 no_start=find(eeg.onset==8);
 no_end=find(eeg.onset==2);
-figure
+% figure
 for k=1:length(no_start)
     no_signal2{k}=filtered(no_start(k):no_end(k),:);
     no_signalpre{k}=data(no_start(k):no_end(k),:);
-    subplot(5,2,k), plot(no_signal2{k}(:,1), 'k'), suptitle('no filtrato 1')
+%     subplot(5,2,k), plot(no_signal2{k}(:,1), 'k'), suptitle('no filtrato 1')
 end  
-figure
-for k=1:length(no_start)
-subplot(5,2,k), plot(no_signalpre{k}(:,1)), suptitle('no grezzo 1')
-end
+% figure
+% for k=1:length(no_start)
+% subplot(5,2,k), plot(no_signalpre{k}(:,1)), suptitle('no grezzo 1')
+% end
 %%
-figure
-plot(data(:,1))
-hold on
-plot(filtered(:,1))
+% figure
+% plot(data(:,1))
+% hold on
+% plot(filtered(:,1))
 
 %% block 3
 save('block2.mat', 'no_signal2', 'yes_signal2')
@@ -165,8 +165,8 @@ Rs = 150;                                                   % Stopband Ripple (d
 [n,Ws] = cheb2ord(Wp,Ws,Rp,Rs);                             % Filter Order
 [z,p,k] = cheby2(n,Rs,Ws);                                  % Filter Design
 [sosbp,gbp] = zp2sos(z,p,k);                                % Convert To Second-Order-Section For Stability
-figure(3)
-freqz(sosbp, 2^16, Fs)                                      % Filter Bode Plot
+% figure(3)
+% freqz(sosbp, 2^16, Fs)                                      % Filter Bode Plot
 filtered = filtfilt(sosbp, gbp, double(data));    % Filter Signal
 
 w=50/(500/2);
@@ -176,45 +176,45 @@ for i=1:4
 filtered(:,i)=filter(num,den,filtered(:,i));
 end
 
-for i=1
- plot(data(i:i+5000,2)) 
- hold on
- plot(filtered(i:i+5000,2),'k'),
- hold off
- pause(1)
- legend('data', 'filtered', 'filteredHP')
-end
+% for i=1
+%  plot(data(i:i+5000,2)) 
+%  hold on
+%  plot(filtered(i:i+5000,2),'k'),
+%  hold off
+%  pause(1)
+%  legend('data', 'filtered', 'filteredHP')
+% end
 
 yes_start=find(eeg.onset==4);
 yes_end=find(eeg.onset==1);
-figure
+% figure
 for k=1:length(yes_start)
     yes_signal3{k}=filtered(yes_start(k):yes_end(k),:);
     yes_signalpre{k}=data(yes_start(k):yes_end(k),:);  
-    subplot(5,2,k), plot(yes_signal3{k}(:,1), 'k'), suptitle('yes filtrato 1')
+%     subplot(5,2,k), plot(yes_signal3{k}(:,1), 'k'), suptitle('yes filtrato 1')
 end  
-figure
-for k=1:length(yes_start)
-subplot(5,2,k), plot(yes_signalpre{k}(:,1)), suptitle('yes grezzo 1')
-end
+% figure
+% for k=1:length(yes_start)
+% subplot(5,2,k), plot(yes_signalpre{k}(:,1)), suptitle('yes grezzo 1')
+% end
 %% no
 no_start=find(eeg.onset==8);
 no_end=find(eeg.onset==2);
-figure
+% figure
 for k=1:length(no_start)
     no_signal3{k}=filtered(no_start(k):no_end(k),:);
     no_signalpre{k}=data(no_start(k):no_end(k),:);
-    subplot(5,2,k), plot(no_signal3{k}(:,1), 'k'), suptitle('no filtrato 1')
+%     subplot(5,2,k), plot(no_signal3{k}(:,1), 'k'), suptitle('no filtrato 1')
 end  
-figure
-for k=1:length(no_start)
-subplot(5,2,k), plot(no_signalpre{k}(:,1)), suptitle('no grezzo 1')
-end
+% figure
+% for k=1:length(no_start)
+% subplot(5,2,k), plot(no_signalpre{k}(:,1)), suptitle('no grezzo 1')
+% end
 %%
-figure
-plot(data(:,1))
-hold on
-plot(filtered(:,1))
+% figure
+% plot(data(:,1))
+% hold on
+% plot(filtered(:,1))
 %%
 save('block3.mat', 'no_signal3', 'yes_signal3')
 clear all

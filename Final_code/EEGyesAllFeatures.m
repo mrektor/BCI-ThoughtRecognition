@@ -1,7 +1,7 @@
 clear all
 close all
 clc
-addpath(genpath('qEEG_feature_set-master'))
+addpath(genpath('lib_feature_extraction'))
 load EEGyes.mat
 load ConnectivityParameters.mat
 load rangeParameters.mat
