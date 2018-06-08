@@ -11,8 +11,8 @@ t=eeg.timePoints;
 Nc=length(data');
 Fs=1/(t(2)-t(1));                                           % Sampling Frequency (Hz)
 Fn = Fs/2;                                                  % Nyquist Frequency (Hz)
-Wp = [0.1 30]/Fn;                                            % Passband Frequency (Normalised)
-Ws = [ 0.01 32]/Fn;                                            % Stopband Frequency (Normalised)
+Wp = [0.1 30]/Fn;                                           % Passband Frequency (Normalised)
+Ws = [ 0.01 32]/Fn;                                         % Stopband Frequency (Normalised)
 Rp =   1;                                                   % Passband Ripple (dB)
 Rs = 150;                                                   % Stopband Ripple (dB)
 
