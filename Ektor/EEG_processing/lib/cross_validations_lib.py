@@ -205,7 +205,7 @@ def cross_validation_one_fold_SVM(y_cross_val_train, y_cross_val_test, tx_cross_
 
 
 
-def hyper_SVM_multiple_executions(X, Y, C_parameters, kernel_types, max_iters, fraction_train_test=0.7, num_experiments):
+def hyper_SVM_multiple_executions(X, Y, C_parameters, kernel_types, max_iters, num_experiments,fraction_train_test=0.7):
     
     accuracies_train = np.zeros([len(C_parameters),len(kernel_types)])
     accuracies_test = np.zeros([len(C_parameters),len(kernel_types)])
@@ -222,7 +222,7 @@ def hyper_SVM_multiple_executions(X, Y, C_parameters, kernel_types, max_iters, f
         for kernel_id, single_kernel in enumerate(kernel_types):
             #print('>> Type of Kernel ',single_kernel, '<')
             # Compute the best weights on the training set
-                for single_seed in seed
+                for single_seed in seed:
                     [i1,i2]=split_matrix_two_blocks(X, fraction_train_test, 1-fraction_train_test,single_seed)
         
                     train=X[i1,:]
@@ -257,8 +257,8 @@ def hyper_SVM_multiple_executions(X, Y, C_parameters, kernel_types, max_iters, f
 
          
                 # Compute the accuracies for each degree
-            accuracies_train[C_id,kernel_id] = np.mean(svm_total_acc_train)
-            accuracies_test[C_id,kernel_id] = np.mean(svm_total_acc_test)
+    accuracies_train[C_id,kernel_id] = np.mean(svm_total_acc_train)
+    accuracies_test[C_id,kernel_id] = np.mean(svm_total_acc_test)
             #print(accuracies_test[C_id,kernel_id],accuracies_train[C_id,kernel_id])
         
         
