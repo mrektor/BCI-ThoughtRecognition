@@ -1,0 +1,133 @@
+
+#
+import scipy.io as sio
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn import linear_model, neighbors, datasets
+from sklearn import svm
+import scipy.signal as signal
+import numpy as np
+from sklearn import svm
+from sklearn.feature_selection import SelectKBest
+from sklearn.feature_selection import f_classif
+from sklearn.model_selection import LeavePOut
+from sklearn.preprocessing import StandardScaler
+import sys
+import time
+
+import warnings
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+def split_matrix_two_blocks(y, percentage1, percentage2, seed):
+    """Build k indices for k-fold."""
+    if(percentage1+percentage2==1):
+        num_row = len(y)
+        #print(num_row)
+        interval_1 = int(percentage1*num_row);
+        
+        np.random.seed(seed)
+        indices = np.random.permutation(num_row);
+        first_indices = indices[0:interval_1];
+        second_indices = indices[interval_1:num_row];
+        return [np.array(first_indices),np.array(second_indices)]
+    else:
+        print('>>>>>>>>>>>ERROR:Not valid splitting percentage')
+        
+        
+##
+## This function reutrn a list of matrices. Each matrix correspond to a question instance in which each row is a channel, and in the coloumn it develop the signal in time
+## The function also manage to standardize the time length
+def channels_to_vector(channels): 
+    time_instances=[];
+    dim=channels.shape;
+    #find the length min of the signal in the specified temporal instance
+    length_min=len(channels[0,1]);
+    for i in range (0,dim[1]):
+        single_measurement=channels[0,i];
+        single_length=single_measurement.shape[0]
+        if(single_length<length_min):
+                length_min=single_length;
+    #export the signals
+    for i in range (0,dim[1]):
+        single_measurement=channels[0,i];
+        dim1=single_measurement.shape;
+        time_instance=[];
+        for j  in range (0,dim1[1]):
+            if(len(single_measurement[:,j])>length_min):
+                single_signal=single_measurement[:,j][0:length_min]
+            else:
+                single_signal=single_measurement[:,j]
+            #put in a list 
+            time_instance.append(np.asarray(single_signal).reshape(len(single_signal),1).T);
+       # create the matrix of the signals per a single time instance 
+        time_instance=np.concatenate(time_instance);
+        time_instances.append(time_instance);   
+    return time_instances;
+
+
+##
+# Create the train data matrix
+##
+## usage
+def get_feature_matrix_and_labels(channel_structure,label,features_extracted,connectivity_feature):
+    list_train=[]
+    list_labels=[]
+    cont=0;
+    index_connectivity=0;
+    list_row=[]
+    
+    for time_instance in channel_structure:
+        dim1=time_instance.shape
+        #indipendent_components=extract_ICs(time_instance,n_ICA_components);
+        for j  in range (0,dim1[0]):
+           
+            features=features_extracted[cont,:];
+            list_row.append(features);
+            cont=cont+1;
+        """feature_dictionary["fft_max_frequencies"]=0;
+        for single_component in indipendent_components:
+            features=feature_extraction(single_component,feature_dictionary,features_extracted)
+            list_row.append(features);"""
+        list_row.append(connectivity_feature[index_connectivity,:]);
+        index_connectivity=index_connectivity+1;
+        labels=get_labels(1,label);
+        feature_row=np.concatenate(list_row);
+        list_train.append(feature_row.reshape(len(feature_row),1).T)
+        list_labels.append(labels);
+        list_row=[]
+        
+    train_TX=np.concatenate(list_train)
+    labels=np.concatenate(list_labels,axis=0)
+    
+    return train_TX,labels.T.reshape(labels.size)
+
+
+### Description
+def get_labels(number, string):
+    if(string=="No"):
+        return np.zeros(number)    
+    if(string=="Yes"):
+        return np.ones(number)
+    
+## description
+def select_features(weights,matrix,th):
+    cont=0;
+    i=0;
+    while(cont<len(weights)):
+        if(weights[cont]<th):
+
+            mask = np.ones(matrix.shape[1], dtype=bool)
+            mask[i] = False
+            matrix=matrix[:,mask]
+        else:
+            i=i+1;
+        cont=cont+1;
+    return matrix
+
+
+def get_accuracy(predicted_labels, true_labels):
+     if (predicted_labels.size == true_labels.size):
+        return  np.sum(predicted_labels ==  true_labels )/len( true_labels)
+
+
+
