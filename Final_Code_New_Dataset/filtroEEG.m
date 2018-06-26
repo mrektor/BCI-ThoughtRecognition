@@ -3,7 +3,7 @@ close all
 clc
 addpath(genpath('6DayDataset'))
 %%
-% the only parameters to modify if the dataset change are nd, nb, the name of
+% the only parameters to modify if the dataset changes are nd, nb, the name of
 % the input files and the folder where to save the data
 % 
 % the output are two file EEGyes.mat and EEGno.mat containing the signals
