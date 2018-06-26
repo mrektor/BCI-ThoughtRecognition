@@ -2,18 +2,20 @@ clear all
 close all
 clc
 addpath(genpath('lib_feature_extraction'))
-load EEGyes.mat
+
 load ConnectivityParameters.mat
 load rangeParameters.mat
 load amplitudeParameters.mat
 load('spectralParameters.mat')
-
+disp('Processing yes questions');
 %%
 Fs=500;
 nd=6;
+disp('Processing Yes Questions' );
 for d=1:nd
     dir=strcat('DataDay', num2str(d));
     addpath(genpath(dir))
+    disp(['Processing   ',dir,' ...']);
     load (fullfile(dir,'EEGyes.mat'))
 
 %% connectivity

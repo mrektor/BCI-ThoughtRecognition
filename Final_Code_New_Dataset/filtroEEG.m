@@ -10,6 +10,7 @@ addpath(genpath('6DayDataset'))
 % corresponding to the yes/no answer and a file order.mat containing a vector of 0/1 representing the
 % order of the answers
 %%
+disp('Filtering all the data'); 
 nd=6; %number of days
 nb=[4 4 2 4 3 4]; %number of blocks/day
 order=[];

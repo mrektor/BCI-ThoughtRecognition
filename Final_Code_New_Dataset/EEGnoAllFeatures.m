@@ -8,10 +8,12 @@ load amplitudeParameters.mat
 load('spectralParameters.mat')
 
 %%
+disp('Processing No Questions' );
 Fs=500;
 nd=6; 
 for d=1:nd
     dir=strcat('DataDay', num2str(d));
+    disp(['Processing   ',dir,' ...']);
     addpath(genpath(dir))
     load (fullfile(dir,'EEGno.mat'))
 
